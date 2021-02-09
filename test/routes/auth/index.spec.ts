@@ -1,11 +1,12 @@
 import request from 'supertest'
 import { expect } from 'chai'
+
 import createServer from 'server'
 
 const app = createServer()
 
-describe('server check', () => {
-  it('server is create without error', (done) => {
-    request(app).get('/').expect(200, done)
+describe('auth routes', () => {
+  it('/auth responds with 200', () => {
+    request(app).get('/auth').expect(200)
   })
 })
